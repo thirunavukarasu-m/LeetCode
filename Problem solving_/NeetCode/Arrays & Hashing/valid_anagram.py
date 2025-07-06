@@ -36,9 +36,22 @@ def valid_anagram(s,t):
     
     if len(s) != len(t):
         return False
-        
-    temp_dictionary_1 = {}
-    temp_dictionary_2 = {}
+    
+    "anagram"
+    temp_dictionary_1 = {
+        "a": 3,
+        "n" : 1,
+        'g': 1,
+        'r': 1,
+        'm':1
+    }
+    temp_dictionary_2 = {
+        "a": 3,
+        "n" : 1,
+        'g': 1,
+        'r': 1,
+        'm':1
+    }
     
     
     for i in s:
@@ -54,5 +67,5 @@ def valid_anagram(s,t):
             temp_dictionary_2[j] += 1
     return temp_dictionary_1 == temp_dictionary_2
     
-# print(valid_anagram("aacc", "ccac"))
+print(valid_anagram("bala", "alab"))
 # This logic works but is very slow.

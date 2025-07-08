@@ -74,4 +74,23 @@ def longest_substring_unique_2(s):
     return max_length
     
     
-print(longest_substring_unique_2('dvdf'))
+# print(longest_substring_unique_2('dvdf'))
+
+def longest_substring_unique_3(s):
+    max_length = 0
+    if not s:
+        return max_length
+    
+    pointer_one = 0
+    contains = set()
+    
+    for pointer_two, char in enumerate(s):
+        while char in contains:
+            contains.remove(s[pointer_one])
+            pointer_one += 1
+        
+        contains.add(char)
+        max_length = max(max_length, pointer_two - pointer_one + 1)
+    return max_length
+        
+print(longest_substring_unique_3('pwwkew'))
